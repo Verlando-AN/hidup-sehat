@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAYA HIDUP SEHAT</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #79f89f;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header-container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 42px;
+            font-weight: 800;
+            color: #333;
+        }
+        
+        .tagline {
+            color: #777;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .navbar {
+            display: flex;
+        }
+        
+        .navbar a {
+            margin-left: 20px;
+            text-transform: uppercase;
+            color: #444;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .search-icon {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .social-icons a {
+            color: #333;
+        }
+        
+        /* Main Content */
+        .main-content {
+            width: 85%;
+            margin: 30px auto;
+            display: flex;
+        }
+        
+        .content-area {
+            flex: 7;
+            padding-right: 30px;
+        }
+        
+        .sidebar {
+            flex: 3;
+        }
+        
+        /* Blog Post Styles */
+        .blog-post-heading {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            max-width: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #1abc9c;
+        }
+        
+        .post-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .post-title {
+            padding: 20px 0;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #777;
+            font-size: 13px;
+            align-items: center;
+        }
+        
+        .post-meta i {
+            margin-right: 5px;
+        }
+        
+        .post-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .continue-reading {
+            display: inline-block;
+            border: 1px solid #d35400;
+            color: #d35400;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        
+        .continue-reading:hover {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar-heading {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+            position: relative;
+        }
+        
+        .sidebar-heading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #1abc9c;
+            margin-top: 5px;
+        }
+        
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .social-follow {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-follow a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .google {
+            background-color: #dd4b39;
+        }
+        
+        .read-more-section {
+            margin-top: 20px;
+        }
+        
+        .read-more-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .read-more-thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .read-more-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .read-more-title {
+            color: #333;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            background-color: rgb(57, 162, 76);
+            color: white;
+            text-align: center;
+            padding: 1px 0;
+            font-size: smaller;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1 class="logo">GAYA HIDUP SEHAT</h1>
+                <p class="tagline">ARTICLE</p>
+            </div>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="artikel.html">Artikel</a>
+                <a href="kontak.html">Contact</a>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="content-area">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="post-container">
+                <div class="post-image">
+                    <img src="img/teh.jpg">
+                </div>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> 21, MARET 2025</span>
+                    <span><i class="fas fa-user"></i> BY ME</span>
+                    <span><i class="far fa-clock"></i> 2 MIN READ</span>
+                </div>
+                <h2>12 Manfaat Teh Hijau untuk Kesehatan</h2>
+                <br>
+                <p class="post-excerpt">
+                    Teh hijau kaya akan kandungan antioksidan yang bermanfaat untuk melawan radikal bebas. Paparan radikal bebas berlebih dapat merusak sel-sel tubuh yang tampak dengan munculnya tanda-tanda penuaan dini, bahkan terjadinya kanker.
+                </p>
+                
+                <p class="post-excerpt">
+                    Salah satu kandungan antioksidan dalam teh hijau adalah katekin, yang berperan penting dalam mencegah kerusakan sel-sel tubuh. Jika dikonsumsi secara rutin, teh hijau dapat memberikan banyak manfaat bagi kesehatan, antara lain:
+                </p>
+                
+                <p class="post-excerpt"><strong>1. Mencegah penyakit jantung koroner</strong><br>
+                    Penyakit jantung dan pembuluh darah merupakan penyebab kematian tertinggi di dunia. Sebuah riset menunjukkan bahwa mengonsumsi teh hijau dapat menurunkan kolesterol total, kolesterol jahat (LDL), serta tekanan darah tinggi yang menjadi penyebab terjadinya penyakit jantung.
+                </p>
+                
+                <p class="post-excerpt">
+                    Selain itu, teh hijau juga mengandung polifenol yang dapat membantu menjaga pembuluh darah tetap lentur dan bersih, sehingga terjadinya penyakit jantung koroner bisa berkurang.
+                </p>
+                
+                <p class="post-excerpt"><strong>2. Mencegah stroke</strong><br>
+                    Mengonsumsi teh hijau secara teratur terbukti menawarkan segudang manfaat kesehatan, salah satunya mengurangi risiko terkena stroke. Berkat kandungan polifenol di teh hijau, rutin mengonsumsinya diketahui dapat meningkatkan fungsi pembuluh darah. Dengan begitu, aliran darah menjadi lebih lancar.
+                </p>
+                
+                <p class="post-excerpt">
+                    Orang yang memiliki riwayat stroke juga disarankan rutin mengosumsi teh hijau untuk menurunkan risiko terjadinya komplikasi, bahkan kematian, akibat stroke.
+                </p>
+                
+                <p class="post-excerpt"><strong>3. Menurunkan kolesterol</strong><br>
+                    Kolesterol tinggi sering dikaitkan dengan berbagai penyakit kronis. Hal ini dapat dicegah dengan rutin mengonsumsi teh hijau. Selain mencegah peningkatan kadar kolesterol, konsumsi teh hijau secara rutin juga dapat menurunkan kadar kolesterol.
+                </p>
+                
+                <p class="post-excerpt">
+                    Manfaat ini didapatkan dari kandungan katekin yang ada di dalam teh hijau. Namun, mekanisme pasti katekin dalam menurunkan kolesterol masih belum diketahui, sehingga penelitian lebih lanjut masih diperlukan.
+                </p>
+                
+                <p class="post-excerpt"><strong>4. Menghambat pertumbuhan sel kanker</strong><br>
+                    Polifenol merupakan salah satu antioksidan yang terkandung di dalam teh hijau. Senyawa ini dapat menghambat pertumbuhan berbagai jenis sel kanker, seperti kanker kulit, kanker paru-paru, kanker lambung, dan kanker payudara.
+                </p>
+                
+                <p class="post-excerpt">
+                    Namun, masih diperlukan penelitian lebih lanjut untuk memastikan efektivitas teh hijau dalam mencegah kanker.
+                </p>
+                
+                <p class="post-excerpt"><strong>5. Mencegah diabetes</strong><br>
+                    Sebuah penelitian menunjukkan bahwa kandungan kafein yang ada di dalam teh hijau dapat meningkatkan kerja insulin dan menjaga kadar gula darah penderita diabetes tetap normal. Pada orang yang sehat, efek ini bisa mencegah terjadinya resistensi insulin dan mengontrol kadar gula darah.
+                </p>
+                
+                <p class="post-excerpt"><strong>6. Menurunkan berat badan</strong><br>
+                    Sebuah penelitian menunjukkan bahwa teh hijau bermanfaat untuk meningkatkan metabolisme tubuh dan membakar lemak, terutama lemak di perut.
+                </p>
+                
+                <p class="post-excerpt">
+                    Namun, untuk memperoleh manfaat teh hijau yang satu ini, Anda juga perlu rutin olahraga, menjalani pola makan sehat, dan kurangi kebiasaan ngemil berlebihan. Ini penting dilakukan agar tubuh Anda tidak kelebihan kalori, sehingga berat badan tidak bertambah.
+                </p>
+                
+                <p class="post-excerpt"><strong>7. Menstabilkan tekanan darah</strong><br>
+                    Teh hijau diketahui dapat melemaskan otot-otot di pembuluh darah, sehingga mampu menurunkan tekanan darah. Selain itu, kandungan polifenol di dalamnya juga mampu menurunkan tekanan darah dalam tubuh.
+                </p>
+                
+                <p class="post-excerpt"><strong>8. Mencegah terjadinya keriput</strong><br>
+                    Polifenol yang terkandung dalam teh hijau dapat membantu mencegah pembentukan keriput sekaligus mengurangi penuaan kulit akibat faktor lingkungan, seperti paparan sinar matahari dan polusi. Manfaat teh hijau ini diperoleh dengan cara menangkal radikal bebas yang mampu merusak kulit.
+                </p>
+                
+                <p class="post-excerpt">
+                    Tak hanya dengan cara diminum, manfaat teh hijau ini bisa diperoleh dengan menggunakan produk skincare yang mengandung ekstrak teh hijau atau memanfaatkan teh hijau murni sebagai bahan untuk scrub atau masker alami.
+                </p>
+                
+                <p class="post-excerpt"><strong>9. Mencegah dan meringankan sakit gigi</strong><br>
+                    Sebuah penelitian menemukan bahwa minum teh hijau atau menggunakan obat kumur dengan kandungan ekstrak teh hijau bisa memberi efek positif pada kesehatan gigi dan mulut, terutama dalam mencegah kerusakan gigi yang mengakibatkan sakit gigi.
+                </p>
+                
+                <p class="post-excerpt">
+                    Namun, masih diperlukan lebih banyak penelitian untuk membuktikan efektivitas teh hijau untuk mengurangi sakit gigi.
+                </p>
+                
+                <p class="post-excerpt"><strong>10. Mencegah dan mengatasi gusi bengkak</strong><br>
+                    Selain bersifat antioksidan, polifenol dalam teh hijau memiliki sifat antibakteri dan antiradang. Oleh karena itu, teh hijau juga dianggap mampu mencegah dan mengatasi masalah kesehatan gigi dan mulut, seperti gigi berlubang dan gusi bengkak karena pertumbuhan bakteri.
+                </p>
+                
+                <p class="post-excerpt"><strong>11. Menenangkan pikiran</strong><br>
+                    Teh hijau mengandung asam amino L-theanine yang dapat membantu mengurangi kecemasan, stres, dan menenangkan pikiran. Manfaat teh hijau ini dibuktikan melalui sebuah penelitian yang mengemukakan bahwa orang yang rutin mengonsumsi L-theanine selama 4 minggu merasa lebih rileks dan bisa tidur lebih nyenyak.
+                </p>
+                
+                <p class="post-excerpt"><strong>12. Mencegah dehidrasi</strong><br>
+                    Setiap jenis teh mengandung jumlah kafein yang berbeda. Makin banyak kadar kafeinnya, makin sedikit teh tersebut dapat menghidrasi tubuh.
+                </p>
+                
+                <p class="post-excerpt">
+                    Teh hijau secara alami hanya mengandung sekitar 12 miligram kafein. Dengan demikian, mengonsumsi teh hijau diketahui lebih mampu menghidrasi tubuh dan membantu mencegah dehidrasi daripada jenis teh lain yang tinggi kafein.
+                </p>
+                
+                                 
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="sidebar-section about-me">
+                <h3 class="sidebar-heading">ABOUT ME</h3>
+                <div class="profile-image">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230518/pngtree-young-woman-anime-cartoon-drawing-image_2581725.jpg" alt="Subhang Mishra">
+                </div>
+                <h4>ME</h4>
+                <p class="about-text">
+                   i'am a programmer
+                </p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">FOLLOW ME</h3>
+                <p>Feel free to join me on my social networks.</p>
+                <div class="social-follow">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">READ MORE</h3>
+                <div class="read-more-section">
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/daun.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index1.html" class="read-more-title">7 MANFAAT DAUN KATUK</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="https://tribratanews.polri.go.id/web/image/blog.post/50108/image" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index2.html" class="read-more-title">8 MANFAAT RENANG</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/tidur.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index3.html" class="read-more-title">Manfaat Istirahat dan Tidur yang Cukup</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/meditasi.jpeg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index4.html" class="read-more-title">5 Manfaat Meditasi untuk Kesehatan Mental</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/teh.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index5.html" class="read-more-title">12 Manfaat Teh Hijau untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/air.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index6.html" class="read-more-title">10 Manfaat Minum Air Putih untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>@2025 Official web gaya sehat</p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any JavaScript functionality here
+            
+            // Example: Search icon functionality
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                alert('Search functionality would go here!');
+            });
+            
+            // Example: Continue reading functionality
+            document.querySelector('.continue-reading').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This would load the full blog post!');
+            });
+        });
+    </script>
+</body>
+</html>

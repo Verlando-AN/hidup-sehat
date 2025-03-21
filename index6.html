@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAYA HIDUP SEHAT</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #79f89f;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header-container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 42px;
+            font-weight: 800;
+            color: #333;
+        }
+        
+        .tagline {
+            color: #777;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .navbar {
+            display: flex;
+        }
+        
+        .navbar a {
+            margin-left: 20px;
+            text-transform: uppercase;
+            color: #444;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .search-icon {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .social-icons a {
+            color: #333;
+        }
+        
+        /* Main Content */
+        .main-content {
+            width: 85%;
+            margin: 30px auto;
+            display: flex;
+        }
+        
+        .content-area {
+            flex: 7;
+            padding-right: 30px;
+        }
+        
+        .sidebar {
+            flex: 3;
+        }
+        
+        /* Blog Post Styles */
+        .blog-post-heading {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            max-width: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #1abc9c;
+        }
+        
+        .post-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .post-title {
+            padding: 20px 0;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #777;
+            font-size: 13px;
+            align-items: center;
+        }
+        
+        .post-meta i {
+            margin-right: 5px;
+        }
+        
+        .post-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .continue-reading {
+            display: inline-block;
+            border: 1px solid #d35400;
+            color: #d35400;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        
+        .continue-reading:hover {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar-heading {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+            position: relative;
+        }
+        
+        .sidebar-heading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #1abc9c;
+            margin-top: 5px;
+        }
+        
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .social-follow {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-follow a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .google {
+            background-color: #dd4b39;
+        }
+        
+        .read-more-section {
+            margin-top: 20px;
+        }
+        
+        .read-more-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .read-more-thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .read-more-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .read-more-title {
+            color: #333;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            background-color: rgb(57, 162, 76);
+            color: white;
+            text-align: center;
+            padding: 1px 0;
+            font-size: smaller;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1 class="logo">GAYA HIDUP SEHAT</h1>
+                <p class="tagline">ARTICLE</p>
+            </div>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="artikel.html">Artikel</a>
+                <a href="kontak.html">Contact</a>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="content-area">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="post-container">
+                <div class="post-image">
+                    <img src="img/air.jpg">
+                </div>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> 21, MARET 2025</span>
+                    <span><i class="fas fa-user"></i> BY ME</span>
+                    <span><i class="far fa-clock"></i> 2 MIN READ</span>
+                </div>
+                <h2>10 Manfaat Minum Air Putih untuk Kesehatan</h2>
+                <br>
+                <p class="post-excerpt">
+                    <strong>Beragam Manfaat Air Putih untuk Kesehatan</strong><br>
+                    Air putih dikenal dengan beragam manfaatnya bagi tubuh. Berikut ini adalah beberapa manfaat minum air putih untuk kesehatan:
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>1. Mencegah dehidrasi</strong><br>
+                    Menjaga asupan cairan dengan minum air putih penting untuk mencegah tubuh dari kekurangan cairan atau dehidrasi. Kondisi ini ditandai dengan sering merasa haus, buang air kecil lebih sedikit dari biasanya, mulut kering, kelelahan, kepala terasa pusing, serta urine berwarna gelap dan berbau menyengat.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>2. Menjaga kesehatan sendi dan otot</strong><br>
+                    Manfaat minum air putih yang cukup secara rutin juga dapat meningkatkan kekuatan dan kelenturan sendi serta otot. Dengan demikian, otot tidak kaku dan tubuh pun tidak cepat lelah saat bergerak atau beraktivitas.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>3. Menurunkan berat badan</strong><br>
+                    Mengonsumsi air putih dapat meningkatkan metabolisme sehingga memudahkan tubuh dalam membakar lemak serta membuang kotoran melalui keringat, urine, dan tinja. Hal ini tentunya berdampak pada penurunan berat badan.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>4. Memelihara kesehatan kulit</strong><br>
+                    Manfaat minum air putih juga dapat menjaga kesehatan kulit. Hal ini karena kurangnya cairan tubuh bisa menyebabkan kulit menjadi kering. Oleh karena itu, penting untuk memenuhi kebutuhan cairan tubuh dengan minum air putih agar kulit tetap terhidrasi dan lembap.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>5. Menjaga konsentrasi</strong><br>
+                    Kekurangan cairan tubuh juga berdampak pada terganggunya fungsi otak, terutama kemampuan untuk fokus dan konsentrasi. Hal ini tentu berdampak pada aktivitas dan produktivitas Anda sepanjang hari.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>6. Mencegah dan mengatasi sembelit</strong><br>
+                    Kurangnya asupan cairan diketahui dapat mengganggu fungsi pencernaan. Kondisi ini bisa mengakibatkan beberapa masalah pencernaan, termasuk sembelit. Untuk mencegah sekaligus mengobatinya, Anda disarankan untuk memperbanyak minum air putih.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>7. Mencegah batu ginjal</strong><br>
+                    Sebuah penelitian mengungkapkan bahwa minum air putih yang cukup dapat mencegah terbentuknya batu ginjal atau kambuhnya penyakit batu ginjal pada orang yang sebelumnya pernah menderita penyakit tersebut.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>8. Menjaga tekanan darah</strong><br>
+                    Air adalah bagian terbesar dari darah. Jika Anda kekurangan cairan tubuh, darah akan lebih kental dan menyebabkan terjadinya ketidakseimbangan elektrolit, seperti natrium dan kalium, yang terdapat di dalam darah.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>9. Membantu kinerja jantung</strong><br>
+                    Minum air putih yang cukup bermanfaat untuk membantu jantung agar bisa bekerja dengan baik. Pasalnya, kekurangan cairan menyebabkan lebih sedikit darah di dalam tubuh sehingga dapat menurunkan tekanan darah dan meningkatkan detak jantung.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>10. Meningkatkan stamina</strong><br>
+                    Tubuh membutuhkan energi untuk menjalani aktivitas sehari-hari. Sumber energi tidak hanya diperoleh dari makanan. Konsumsi air putih yang cukup juga dapat membuat tubuh tidak mudah lemas selama bergerak dan beraktivitas.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>Tips agar Kebutuhan Cairan Tubuh Tetap Terpenuhi</strong><br>
+                </p>
+                
+                <p class="post-excerpt">
+                    Ada beberapa tips yang dapat dilakukan agar Anda memperoleh manfaat minum air putih dengan maksimal, antara lain:
+                </p>
+                
+                <p class="post-excerpt">
+                    - Cobalah untuk membiasakan minum air putih setiap waktu makan, saat mengonsumsi camilan, sebelum tidur pada malam hari, dan saat bangun tidur.<br>
+                    - Minum air putih sebelum, selama, dan setelah berolahraga.<br>
+                    - Sediakan gelas atau botol berisi air minum di meja atau tas setiap saat sehingga Anda lebih mudah untuk menjaga asupan air putih harian.<br>
+                    - Bila belum terbiasa minum air putih karena rasanya yang hambar, Anda bisa menambahkan irisan buah ke dalam air putih, misalnya lemon atau jeruk nipis.
+                </p>
+                
+                <p class="post-excerpt">
+                    <strong>Kriteria Air Minum yang Aman Dikonsumsi</strong><br>
+                </p>
+                
+                <p class="post-excerpt">
+                    Air putih memang menyehatkan, tetapi tidak semua air putih dapat dikonsumsi. Ada beberapa ketentuan air minum yang aman dan layak konsumsi menurut Kementerian Kesehatan RI, yaitu:
+                </p>
+                
+                <p class="post-excerpt">
+                    - Tidak memiliki rasa.<br>
+                    - Tidak berbau dan berwarna.<br>
+                    - Tidak mengandung bakteri.<br>
+                    - Tidak mengandung logam berat dan bahan kimia melebihi batas yang diperbolehkan.
+                </p>
+                
+                <p class="post-excerpt">
+                    Jika ingin minum air dalam kemasan, pastikan air minum yang Anda konsumsi sudah terdaftar di BPOM dan telah memenuhi standar kesehatan. Tujuannya adalah guna mencegah gangguan kesehatan akibat konsumsi air minum yang terkontaminasi.
+                </p>
+                
+                                
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="sidebar-section about-me">
+                <h3 class="sidebar-heading">ABOUT ME</h3>
+                <div class="profile-image">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230518/pngtree-young-woman-anime-cartoon-drawing-image_2581725.jpg" alt="Subhang Mishra">
+                </div>
+                <h4>ME</h4>
+                <p class="about-text">
+                   i'am a programmer
+                </p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">FOLLOW ME</h3>
+                <p>Feel free to join me on my social networks.</p>
+                <div class="social-follow">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">READ MORE</h3>
+                <div class="read-more-section">
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/daun.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index1.html" class="read-more-title">7 MANFAAT DAUN KATUK</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="https://tribratanews.polri.go.id/web/image/blog.post/50108/image" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index2.html" class="read-more-title">8 MANFAAT RENANG</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/tidur.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index3.html" class="read-more-title">Manfaat Istirahat dan Tidur yang Cukup</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/meditasi.jpeg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index4.html" class="read-more-title">5 Manfaat Meditasi untuk Kesehatan Mental</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/teh.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index5.html" class="read-more-title">12 Manfaat Teh Hijau untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/air.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index6.html" class="read-more-title">10 Manfaat Minum Air Putih untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>@2025 Official web gaya sehat</p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any JavaScript functionality here
+            
+            // Example: Search icon functionality
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                alert('Search functionality would go here!');
+            });
+            
+            // Example: Continue reading functionality
+            document.querySelector('.continue-reading').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This would load the full blog post!');
+            });
+        });
+    </script>
+</body>
+</html>

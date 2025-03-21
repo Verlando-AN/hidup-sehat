@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAYA HIDUP SEHAT</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #79f89f;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header-container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 42px;
+            font-weight: 800;
+            color: #333;
+        }
+        
+        .tagline {
+            color: #777;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .navbar {
+            display: flex;
+        }
+        
+        .navbar a {
+            margin-left: 20px;
+            text-transform: uppercase;
+            color: #444;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .search-icon {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .social-icons a {
+            color: #333;
+        }
+        
+        /* Main Content */
+        .main-content {
+            width: 85%;
+            margin: 30px auto;
+            display: flex;
+        }
+        
+        .content-area {
+            flex: 7;
+            padding-right: 30px;
+        }
+        
+        .sidebar {
+            flex: 3;
+        }
+        
+        /* Blog Post Styles */
+        .blog-post-heading {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            max-width: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #1abc9c;
+        }
+        
+        .post-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .post-title {
+            padding: 20px 0;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #777;
+            font-size: 13px;
+            align-items: center;
+        }
+        
+        .post-meta i {
+            margin-right: 5px;
+        }
+        
+        .post-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .continue-reading {
+            display: inline-block;
+            border: 1px solid #d35400;
+            color: #d35400;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        
+        .continue-reading:hover {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar-heading {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+            position: relative;
+        }
+        
+        .sidebar-heading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #1abc9c;
+            margin-top: 5px;
+        }
+        
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .social-follow {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-follow a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .google {
+            background-color: #dd4b39;
+        }
+        
+        .read-more-section {
+            margin-top: 20px;
+        }
+        
+        .read-more-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .read-more-thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .read-more-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .read-more-title {
+            color: #333;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            background-color: rgb(57, 162, 76);
+            color: white;
+            text-align: center;
+            padding: 1px 0;
+            font-size: smaller;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1 class="logo">GAYA HIDUP SEHAT</h1>
+                <p class="tagline">ARTICLE</p>
+            </div>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="artikel.html">Artikel</a>
+                <a href="kontak.html">Contact</a>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="content-area">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="post-container">
+                <div class="post-image">
+                    <img src="https://tribratanews.polri.go.id/web/image/blog.post/50108/image">
+                </div>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> 21, MARET 2025</span>
+                    <span><i class="fas fa-user"></i> BY ME</span>
+                    <span><i class="far fa-clock"></i> 2 MIN READ</span>
+                </div>
+                <h2>8 Manfaat Berenang</h2>
+                <br>
+                <p class="post-excerpt">
+                    <strong>Manfaat Berenang untuk Kesehatan Tubuh dan Mental</strong><br>
+                    Selain bermanfaat untuk meningkatkan metabolisme tubuh, membakar kalori, dan menjaga kesehatan jantung, berenang juga dikenal bisa menjadi solusi untuk menurunkan risiko stres dan depresi. Tidak hanya itu, masih banyak manfaat lainnya yang wajib kamu ketahui berikut ini:
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>1. Meningkatkan Kesehatan Jantung</strong><br>
+                    Berenang merupakan latihan kardiovaskular yang luar biasa karena dapat meningkatkan detak jantung, membuat jantung lebih kuat, dan lebih efisien dalam memompa darah ke seluruh tubuh. Dengan melawan resistensi air, berenang melatih seluruh tubuh, memaksa jantung dan paru-paru bekerja lebih keras untuk memasok oksigen pada otot. Hal ini akhirnya memperkuat sistem kardiovaskular, meningkatkan stamina, dan efisiensi tubuh secara keseluruhan.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>2. Membantu Menurunkan Berat Badan</strong><br>
+                    Berenang adalah olahraga yang efektif untuk menurunkan berat badan karena dapat membakar kalori dengan menyenangkan namun tidak terasa terlalu intens. Dengan intensitas yang tepat, berenang bisa membakar hingga 423 kalori per jam bagi seseorang dengan berat badan 74 kg. Jika dilakukan selama 1 jam, berenang bisa membakar sekitar 500 – 650 kalori. Selain membantu membakar kalori, berenang juga mampu memperbaiki komposisi tubuh dengan membentuk otot, yang membuat tubuh lebih ramping dan kencang. Oleh karena itu, berenang adalah pilihan olahraga yang tepat untuk membantu menurunkan berat badan secara berkelanjutan.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>3. Meningkatkan Kualitas Tidur</strong><br>
+                    Selain bisa menurunkan berat badan, ternyata berenang juga bisa meningkatkan kualitas tidur, terutama bagi orang yang mengalami insomnia. Penelitian menunjukkan bahwa latihan aerobik, termasuk berenang, dapat memperbaiki kualitas tidur dan kehidupan secara keseluruhan, terutama pada orang dewasa yang lebih tua.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>4. Merangsang Pertumbuhan Otot</strong><br>
+                    Berenang juga memiliki manfaat besar dalam membangun massa otot. Karena hampir seluruh bagian otot tubuh terlibat dalam melawan resistensi air, berenang dapat merangsang pertumbuhan otot dan meningkatkan fleksibilitas tubuh. Itulah mengapa berenang efektif untuk memperkuat dan mengembangkan massa otot secara keseluruhan.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>5. Menghilangkan Stres</strong><br>
+                    Stres yang dibiarkan terus-menerus dapat berdampak buruk pada kesehatan tubuh. Oleh karena itu, sangat penting untuk menemukan cara yang efektif dalam mengelola dan mengurangi stres dalam kehidupan sehari-hari. Salah satu cara yang dapat dilakukan dengan mudah tanpa adanya risiko berlebih adalah dengan berenang. Olahraga ini tidak hanya membantu menenangkan pikiran, tetapi juga merangsang pelepasan endorfin, yang dapat meningkatkan perasaan bahagia dan rileks.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>6. Menjaga Kesehatan Otak</strong><br>
+                    Berenang dapat meningkatkan kesehatan otak. Rutin berenang dapat menyebabkan perubahan positif pada otak, seperti memperbesar hippocampus, yang berhubungan dengan memori dan pembelajaran. Penelitian membuktikan bahwa perenang memiliki memori dan mood yang lebih baik. Berenang juga meningkatkan aliran darah ke otak, mendukung pembentukan neuron baru, dan membantu mengurangi stres, kecemasan, serta depresi.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>7. Membantu Mengurangi Gejala Asma</strong><br>
+                    Berenang adalah pilihan yang baik untuk penderita asma karena lingkungan lembap pada kolam renang bisa membantu mengurangi iritasi pada saluran pernapasan. Latihan pernapasan yang dilakukan saat berenang, seperti menahan napas, dapat memperluas kapasitas paru-paru.
+                </p>
+
+                <p class="post-excerpt">
+                    <strong>8. Baik untuk Anak-Anak</strong><br>
+                    Berenang juga sangat baik untuk anak-anak. Anak-anak membutuhkan minimal 60 menit latihan aerobik setiap harinya, dan berenang bisa menjadi pilihan yang menyenangkan tanpa terasa seperti latihan yang membosankan.
+                </p>
+
+                <p class="post-excerpt">
+                    Penting untuk diingat bahwa dalam kondisi tertentu, berenang mungkin perlu dibatasi oleh dokter ataupun tenaga kesehatan lainnya. Oleh karena itu, informasi di atas tidak dapat dijadikan acuan tunggal dan tidak menggantikan saran medis profesional. Jika Anda mengalami gejala saat berenang, segera periksakan diri ke dokter di fasilitas kesehatan terdekat.
+                </p>
+                              
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="sidebar-section about-me">
+                <h3 class="sidebar-heading">ABOUT ME</h3>
+                <div class="profile-image">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230518/pngtree-young-woman-anime-cartoon-drawing-image_2581725.jpg" alt="Subhang Mishra">
+                </div>
+                <h4>ME</h4>
+                <p class="about-text">
+                   i'am a programmer
+                </p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">FOLLOW ME</h3>
+                <p>Feel free to join me on my social networks.</p>
+                <div class="social-follow">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">READ MORE</h3>
+                <div class="read-more-section">
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/daun.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index1.html" class="read-more-title">7 MANFAAT DAUN KATUK</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="https://tribratanews.polri.go.id/web/image/blog.post/50108/image" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index2.html" class="read-more-title">8 MANFAAT RENANG</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/tidur.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index3.html" class="read-more-title">Manfaat Istirahat dan Tidur yang Cukup</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/meditasi.jpeg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index4.html" class="read-more-title">5 Manfaat Meditasi untuk Kesehatan Mental</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/teh.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index5.html" class="read-more-title">12 Manfaat Teh Hijau untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                    <div class="read-more-item">
+                        <div class="read-more-thumb">
+                            <img src="img/air.jpg" alt="Article thumbnail">
+                        </div>
+                        <div>
+                            <a href="index6.html" class="read-more-title">10 Manfaat Minum Air Putih untuk Kesehatan</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>@2025 Official web gaya sehat</p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any JavaScript functionality here
+            
+            // Example: Search icon functionality
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                alert('Search functionality would go here!');
+            });
+            
+            // Example: Continue reading functionality
+            document.querySelector('.continue-reading').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This would load the full blog post!');
+            });
+        });
+    </script>
+</body>
+</html>

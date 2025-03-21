@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAYA HIDUP SEHAT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: rgb(248, 228, 1);
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            color: rgb(57, 162, 76);
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: rgb(57, 162, 76);
+        }
+
+        .btn-contact button {
+            padding: 10px 20px;
+            border: none;
+            background-color: rgb(57, 162, 76);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact button:hover {
+            background-color: rgb(248, 228, 1);
+            color: #333;
+        }
+
+        /* Hero Section */
+        .top-container-resep {
+            margin-top: 80px;
+            padding: 20px 5%;
+            text-align: center;
+        }
+
+        .banner-resep h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgb(253, 202, 0);
+            margin-bottom: 10px;
+        }
+
+        .banner-resep p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Section */
+        .container-search {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .input-search {
+            padding: 12px 20px;
+            border-radius: 50px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .card-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .content-preview {
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin: 0 20px 20px;
+            padding: 8px 20px;
+            background-color: rgb(57, 162, 76);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .read-more:hover {
+            background-color: rgb(248, 228, 1);
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgb(57, 162, 76);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-resep h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">Gaya <span>Hidup Sehat</span></div>
+        <ul class="nav">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
+            <li><a href="resep.html">Resep</a></li>
+        </ul>
+        <div class="btn-contact"><a href="kontak.html"><button>Contact Me</button></a></div>
+    </div>
+
+    <div class="top-container-resep">
+        <div class="banner-resep">
+            <h1>Resep Makanan</h1>
+            <p>Inilah tempatnya segala resep masakan enak! Kami telah siapkan beragam hidangan seru bergaya rumahan.</p>
+        </div>
+        <div class="container-search">
+            <input class="input-search" type="text" placeholder="Cari resep">
+        </div>
+        <div class="card-content">
+            <div class="card"><img src="img/ikan.jpg" alt="Ikan Panggang"> <p class="content-preview" >Ikan Panggang Lemon</p>
+                <a href="index7.html" class="read-more">Baca Selengkapnya</a></div>
+            <div class="card"><img src="img/teriyaki.jpeg" alt="Beef Teriyaki"> <p class="content-preview">Beef Teriyaki</p>
+                <a href="index8.html" class="read-more">Baca Selengkapnya</a></div>
+            <div class="card"><img src="img/salad.jpeg" alt="Salad Buah"> <p class="content-preview">Salad Buah</p>
+                <a href="index9.html" class="read-more">Baca Selengkapnya</a></div>
+            
+        </div>
+        <div class="card-content">
+            <div class="card"><img src="img/omelet.jpeg" alt="Ikan Panggang"> <p class="content-preview">Omelet Sayur</p>
+                <a href="index10.html" class="read-more">Baca Selengkapnya</a></div>
+            <div class="card"><img src="img/ayam.jpeg" alt="Beef Teriyaki"> <p class="content-preview">Sup Ayam</p>
+                <a href="index11.html" class="read-more">Baca Selengkapnya</a></div>
+            <div class="card"><img src="img/jagung.jpeg" alt="Salad Buah"> <p class="content-preview">Sup Jagung</p>
+                <a href="index12.html" class="read-more">Baca Selengkapnya</a></div>
+        </div>
+    </div>
+    <div class="footer">@2025 Official web gaya sehat</div>
+</body>
+
+</html>
